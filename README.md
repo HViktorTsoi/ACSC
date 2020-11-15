@@ -72,7 +72,7 @@ source ./devel/setup.zsh # or source ./devel/setup.sh
 - `utils.py`: utilities.
 
 #### Sample Data
-Coming in 1 week.
+The sample solid state LiDAR point clouds, images and camera intrinsic data can be downloaded on [Google Drive](https://drive.google.com/file/d/1hgV-aH_RSsL1geHDSIlwwvqrMy6ED56K/view?usp=sharing).
 
 ### 2.2 Preparing the calibration board
 ![chessboard](./images/chessboard.png)
