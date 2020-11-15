@@ -72,7 +72,11 @@ source ./devel/setup.zsh # or source ./devel/setup.sh
 - `utils.py`: utilities.
 
 #### Sample Data
-The sample solid state LiDAR point clouds, images and camera intrinsic data can be downloaded on [Google Drive](https://drive.google.com/file/d/1hgV-aH_RSsL1geHDSIlwwvqrMy6ED56K/view?usp=sharing).
+The sample solid state LiDAR point clouds, images and camera intrinsic data can be downloaded on:
+ 
+ [Google Drive](https://drive.google.com/file/d/1hgV-aH_RSsL1geHDSIlwwvqrMy6ED56K/view?usp=sharing) 
+ | 
+ [BaiduPan (Code: dge4)](https://pan.baidu.com/s/1FnTI1omBMBZY6iqS-tppLg)
 
 ### 2.2 Preparing the calibration board
 ![chessboard](./images/chessboard.png)
