@@ -15,7 +15,7 @@ import utils
 import cv2
 import numpy as np
 
-SCALE_FACTOR = 2
+SCALE_FACTOR = 1.5
 
 
 def undistort_projection(points, intrinsic_matrix, extrinsic_matrix):
@@ -178,8 +178,8 @@ if __name__ == '__main__':
         )]
         # reprojection
         pc_to_img(pc, img, extrinsic_matrix, intrinsic_matrix, distortion)
-        # colorize
-        img_to_pc(pc, img, extrinsic_matrix, intrinsic_matrix, distortion)
+        # # colorize
+        # img_to_pc(pc, img, extrinsic_matrix, intrinsic_matrix, distortion)
 
     # calc reprojection error
     utils.calc_reprojection_error(root, extrinsic_matrix, intrinsic_matrix, distortion, visualize=True)
