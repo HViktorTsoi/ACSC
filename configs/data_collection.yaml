@@ -1,0 +1,18 @@
+# whether use automatic chessboard localization
+AUTOMATIC_CHESSBOARD_LOCALIZATION: True
+
+# scene size when labeling chessboards
+# xmin,xmax,ymin,ymax,zmin,zmax
+BOUND: [2, 12, -4, 4, -2, 1]
+
+# if there is pre-labeled data
+RELABEL: False
+
+# resolution of displayed point cloud projection, adjust it according to your screen size
+VIRTUAL_CAM_INTRINSIC: 100
+
+# how many lines of log are displayed on chessboard labeler GUI
+LOG_DISPLAY_LINES: 6
+
+
+
