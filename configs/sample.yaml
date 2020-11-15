@@ -1,0 +1,67 @@
+data:
+  root: './data/sample'
+  chessboard:
+    # chessboard size info
+    # w: number of CORNERS along the long-side
+    # h: number of CORNERS along the short-side
+    # grid_size: chessboard grid size(in meters)
+    W: 7
+    H: 5
+    GRID_SIZE: 0.08
+    # GRID_SIZE: 0.15
+
+calibration:
+  # parameters for region growing segmentation for chessboard detection
+  # voxel leaf size before segment
+  RG_VOXEL: 0.03
+
+  # whether to remove ground
+  RG_GROUND_REMOVAL: True
+
+  # number of neighbors to use for determining normal diff
+  RG_NUM_NEIGHBOR: 100
+
+  # minimal cluster size
+  RG_MIN_REGION_SIZE: 400
+  # RG_MIN_REGION_SIZE: 1000
+
+  # maximum cluster size
+  RG_MAX_REGION_SIZE: 3000
+  # RG_MAX_REGION_SIZE: 6000
+
+  # smoothness threshold (in DEG),
+  # the higher it is, the more "rugged" and "long distance" points are considered as belonging to the same region
+  RG_SMOOTH_TH: 10.0
+
+  # curvature threshold,
+  # the cluster usually fracture at region with high curvature difference,
+  # increase this number causes larger connected-clusters
+  RG_CURV_TH: 0.2
+
+  # number of bins for calc z-axis variance, the more sparse point cloud is, the lower bins should be
+  HEIGHT_SEGMENTATION_BINS: 100
+
+  # the margin reserved after segmentation from ROI pillar, preventing cut to much of chessboard
+  HEIGHT_SEGMENTATION_MARGIN: 0.0
+  # HEIGHT_SEGMENTATION_MARGIN: 0.0
+
+  # parameters for 3D corner detection
+  # threshold for 3D corner detection loss
+  OPTIMIZE_TH: 100
+
+  # patch size used to calc resample density
+  RESAMPLE_PATCH_SIZE: 0.04
+
+  # desired density after re-sample, points / cm^2
+  RESAMPLE_DENSITY: 7  # for horizon and mid 100
+
+  # num of workers to process the frames
+  NUM_WORKERS: 4
+
+  # 0: No Vis
+  # 1: Vis 3D detection result
+  # 2: Vis 3D detection result，intensity distribution，camera calibration
+  DEBUG: 0
+
+
+

@@ -1,0 +1,25 @@
+<launch>
+
+    <!--    <arg name="config_path" default="/home/hviktortsoi/Code/livox_camera_calibration/config.yaml"/>-->
+    <arg name="config-path" default=""/>
+    <arg name="image-topic" default="/mynteye/left/image_color"/>
+    <arg name="lidar-topic" default="/livox/lidar"/>
+    <!--    <arg name="lidar-topic" default="/velodyne_points"/>-->
+    <arg name="saving-path" default="/tmp/data"/>
+    <arg name="data-tag" default="''"/>
+
+    <!--************** Lidar denoising node ***************-->
+    <node pkg="calibration_data_collection" type="lidar_integration_node" name="lidar_integration_node"
+          args="$(arg lidar-topic)"/>
+
+    <!--************** Calibration labeling tool ***************-->
+    <node pkg="calibration_data_collection" type="calibration_controller_node.py" name="calibration_controller_node"
+          output="screen" args="--config-file $(arg config-path)
+          --data-saving-path $(arg saving-path)
+          --overlap 50
+          --data-tag $(arg data-tag)
+          --image-topic $(arg image-topic)
+          --lidar-topic /livox/to_integrate
+          --lidar-id -1"/>
+
+</launch>

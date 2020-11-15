@@ -1,0 +1,35 @@
+<launch>
+
+    <!--    <arg name="config_path" default="/home/hviktortsoi/Code/livox_camera_calibration/config.yaml"/>-->
+    <arg name="config-path" default=""/>
+    <arg name="image-topic" default="/mynteye/left/image_color"/>
+    <arg name="lidar-topic-0" default="/livox/lidar"/>
+    <arg name="lidar-topic-1" default="/livox/lidar"/>
+    <arg name="data-tag" default="''"/>
+    <arg name="saving-path" default="/tmp/data"/>
+
+<!--    &lt;!&ndash;************** Lidar denoising node ***************&ndash;&gt;-->
+<!--    <node pkg="calibration_data_collection" type="lidar_denoise_node" name="lidar_denoise_node"-->
+<!--          args="$(arg lidar-topic)"/>-->
+
+    <!--************** Calibration labeling tool ***************-->
+    <node pkg="calibration_data_collection" type="calibration_controller_node.py" name="calibration_controller_node_0"
+          output="screen" args="--config-file $(arg config_path)
+          --data-saving-path $(arg saving-path)
+          --data-tag $(arg data-tag)
+          --image-topic $(arg image-topic)
+          --lidar-topic $(arg lidar-topic-0)
+          --overlap 50
+          --lidar-id 0"/>
+
+    <!--************** Calibration labeling tool ***************-->
+    <node pkg="calibration_data_collection" type="calibration_controller_node.py" name="calibration_controller_node_1"
+          output="screen" args="--config-file $(arg config_path)
+          --data-saving-path $(arg saving-path)
+          --data-tag $(arg data-tag)
+          --image-topic $(arg image-topic)
+          --lidar-topic $(arg lidar-topic-1)
+          --overlap 2
+          --lidar-id 1"/>
+
+</launch>
