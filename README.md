@@ -1,14 +1,18 @@
 # ACSC
-Automatic extrinsic calibration for non-repetitive scanning solid-State LiDAR and camera systems.
+### Automatic extrinsic calibration for non-repetitive scanning solid-State LiDAR and camera systems.
 
-![pipeline](./images/visualization.png)
+![pipeline](./images/visualization.jpg)
 
-#### System Architecture
-![pipeline](./images/pipeline.png)
+### System Architecture
+![pipeline](./images/pipeline.jpg)
 ## 1. Dependency
 Tested with Ubuntu 16.04 64-bit and Ubuntu 18.04 64-bit.
 
 - ROS (tested with kinetic / melodic)
+
+- Eigen 3.2.5
+
+- PCL 1.8
 
 - python 2.X / 3.X
 
@@ -49,7 +53,7 @@ python setup.py install
 We developed a practical ROS tool to achieve convenient calibration data collection,
 which can automatically organize the data into the format in 3.1. **We strongly recommend that you use this tool to simplify the calibration process.**
 
-> It ok if you don't have ROS and don't use the provide tool, just manually process the images and point clouds into 3.1's format.
+> It's ok if you don't have ROS or don't use the provided tool, just manually process the images and point clouds into 3.1's format.
 
 First enter the directory of the collection tool and run the following command:
 ```Bash
@@ -221,7 +225,7 @@ Modify the calibration configuration file in directory `config`, here we take [s
 
 1. Modify the `root` under `data`, to the root directory of data collected in 3.1~3.3. In our example, `root` should be `/tmp/data/1595233229.25`;
 
-2. Modify the `chessboard` parameter under `data`, change `W` and `H` to the number of inner corners of the checkerboard that you use (note that, it is not the number of squares, but the number of inner corners. For the checkerboard in 3.1, W= 7, H=5); 
+2. Modify the `chessboard` parameter under `data`, change `W` and `H` to the number of inner corners of the checkerboard that you use (note that, it is not the number of squares, but the number of inner corners. For instance, for the checkerboard in 2.2, W= 7, H=5); 
 Modify `GRID_SIZE` to the side length of the squares of the checkerboard (unit is m);
 
 
@@ -230,7 +234,7 @@ Then, run the extrinsic calibration code:
 ```Bash
 python calibration.py --config ./configs/sample.yaml
 ```
-After calibration, the extrinsic parameter matrix will be written into the `parameter/extrinsic `file under `data-root`.
+After calibration, the extrinsic parameter matrix will be written into the `parameter/extrinsic` file under `data-root`.
 ![data](./images/result.png)
 
 ## 4. Validation of result
@@ -285,5 +289,21 @@ the RGB-colorized point cloud, and the visualization of the detected 3D corners 
 |  17  | RoboSense RS32  |   AVT Mako G-158C   |      7x5, 0.08m      |
 |  18  | RoboSense RS32  |   Pointgrey CM3-U3-31S4C-CS   |      7x5, 0.08m      |
 
-### II. Q&A
+### II. Paper
 
+[ACSC: Automatic Calibration for Non-repetitive Scanning Solid-State LiDAR and Camera Systems](https://arxiv.org/pdf/2011.08516.pdf)
+
+```
+@misc{cui2020acsc,
+      title={ACSC: Automatic Calibration for Non-repetitive Scanning Solid-State LiDAR and Camera Systems}, 
+      author={Jiahe Cui and Jianwei Niu and Zhenchao Ouyang and Yunxiang He and Dian Liu},
+      year={2020},
+      eprint={2011.08516},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
+}
+```
+
+### III. Issues
+
+Updating...
