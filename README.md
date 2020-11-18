@@ -1,5 +1,5 @@
 # ACSC
-### Automatic extrinsic calibration for non-repetitive scanning solid-State LiDAR and camera systems.
+### Automatic extrinsic calibration for non-repetitive scanning solid-state LiDAR and camera systems.
 
 ![pipeline](./images/visualization.jpg)
 
@@ -75,12 +75,6 @@ source ./devel/setup.zsh # or source ./devel/setup.sh
 
 - `utils.py`: utilities.
 
-#### Sample Data
-The sample solid state LiDAR point clouds, images and camera intrinsic data can be downloaded on:
- 
- [Google Drive](https://drive.google.com/file/d/1hgV-aH_RSsL1geHDSIlwwvqrMy6ED56K/view?usp=sharing) 
- | 
- [BaiduPan (Code: dge4)](https://pan.baidu.com/s/1FnTI1omBMBZY6iqS-tppLg)
 
 ### 2.2 Preparing the calibration board
 ![chessboard](./images/chessboard.png)
@@ -137,9 +131,20 @@ The `pcds` directory contains point clouds corresponding to the images,  each po
 
 The `distortion` and `intrinsic` are the distortion parameters and intrinsic parameters of the camera respectively (will be described in detail in 3.3).
 
-### 3.2 Data collection
 
-First, make sure you can receive data topics from the the Livox LiDAR and Camera;
+#### Sample Data
+The sample solid state LiDAR point clouds, images and camera intrinsic data can be downloaded (**375.6 MB**) on:
+ 
+ [Google Drive](https://drive.google.com/file/d/1hgV-aH_RSsL1geHDSIlwwvqrMy6ED56K/view?usp=sharing) 
+ | 
+ [BaiduPan (Code: dge4)](https://pan.baidu.com/s/1FnTI1omBMBZY6iqS-tppLg)
+
+If you are testing with the provided sample data, you can directly jump to 3.4.
+
+### 3.2 Data collection for your own sensors
+
+First, make sure you can receive data topics from the the Livox LiDAR (
+`sensor_msgs.PointCloud2` ) and Camera ( `sensor_msgs.Image` );
 
 Run the launch file of the data collection tool:
 
@@ -304,6 +309,5 @@ the RGB-colorized point cloud, and the visualization of the detected 3D corners 
 }
 ```
 
-### III. Issues
-
+### III. Known Issues
 Updating...
