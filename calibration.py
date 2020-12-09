@@ -554,11 +554,11 @@ def fit_chessboard_plane(pc):
         dist = np.abs(A * x + B * y + C * z + D) / LA.norm([A, B, C], ord=2)
         pc = pc[np.where(dist < thresh)]
 
-    if DEBUG > 2:
-        pc = pc[indices, :]
-        utils.visualize(pc, show=True)
-        # plt.hist(dist, bins=20)
-        # plt.show()
+    # if DEBUG > 2:
+    #     pc = pc[indices, :]
+    #     utils.visualize(pc, show=True)
+    #     # plt.hist(dist, bins=20)
+    #     # plt.show()
 
     return indices, coefficients
 
@@ -817,6 +817,9 @@ def calibration(keep_list=None, preprocess_hook=None):
         # label ROI
         full_pc = np.load(pc_file)
         full_img = cv2.imread(img_file)
+
+        # used only x, y, z, intensity
+        full_pc = full_pc[:, :4]
 
         # preprocess data
         if preprocess_hook is not None:
