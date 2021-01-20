@@ -88,7 +88,7 @@ it is best to meet the following requirement, when making and placing the calibr
 
 2. The checkerboard should be printed out on white paper, and pasted on a rectangular surface that will not deform;
 
-3. There are not supposed to be extra white borders around the checkerboard;
+3. There should be no extra borders around the checkerboard; 
 
 4. The checkerboard should be placed on a thin monopod, or suspended in the air with a thin wire. 
 And during the calibration process, the support should be as stable as possible (Due to the need for point cloud integration);
