@@ -231,7 +231,7 @@ Modify the calibration configuration file in directory `config`, here we take [s
 1. Modify the `root` under `data`, to the root directory of data collected in 3.1~3.3. In our example, `root` should be `/tmp/data/1595233229.25`;
 
 2. Modify the `chessboard` parameter under `data`, change `W` and `H` to the number of inner corners of the checkerboard that you use (note that, it is not the number of squares, but the number of inner corners. For instance, for the checkerboard in 2.2, W= 7, H=5); 
-Modify `GRID_SIZE` to the side length of the squares of the checkerboard (unit is m);
+Modify `GRID_SIZE` to the side length of a single little white / black square of the checkerboard (unit is m);
 
 
 Then, run the extrinsic calibration code:
